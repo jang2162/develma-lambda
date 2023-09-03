@@ -95,7 +95,7 @@ export async function invokeLambda(lambdaClient, {functionName, payload}) {
     if (StatusCode !== 200) {
         throw new Error(new TextDecoder().decode(Payload))
     }
-    return new TextDecoder().decode(Payload)
+    return JSON.parse(new TextDecoder().decode(Payload))
 }
 
 export function connectSSH(options) {

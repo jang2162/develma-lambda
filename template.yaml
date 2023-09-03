@@ -19,7 +19,7 @@ Resources:
           ENV_FILE_S3_PATH: >-
             env/hibernateRestEc2Instance.json
       Layers:
-        - 'arn:aws:lambda:ap-northeast-2:884587563648:layer:stack-node-common:14'
+        - 'arn:aws:lambda:ap-northeast-2:884587563648:layer:stack-node-common:15'
       RuntimeManagementConfig:
         UpdateRuntimeOn: Auto
   chkEc2CondiMinecraftServerIdle:
@@ -34,7 +34,7 @@ Resources:
       Role: >-
         arn:aws:iam::884587563648:role/role-develma-lambda-chkEc2CondiMinecraftServerIdle
       Layers:
-        - 'arn:aws:lambda:ap-northeast-2:884587563648:layer:stack-node-common:14'
+        - 'arn:aws:lambda:ap-northeast-2:884587563648:layer:stack-node-common:15'
       RuntimeManagementConfig:
         UpdateRuntimeOn: Auto
   chkEc2CondiOpenVpnAccessServerIdle:
@@ -57,7 +57,7 @@ Resources:
           - subnet-06f002cc77ccc4805
           - subnet-0fb99247dca3eb20f
       Layers:
-        - 'arn:aws:lambda:ap-northeast-2:884587563648:layer:stack-node-common:14'
+        - 'arn:aws:lambda:ap-northeast-2:884587563648:layer:stack-node-common:15'
       RuntimeManagementConfig:
         UpdateRuntimeOn: Auto
   chkEc2CondiSshDirLastModDate:
@@ -80,7 +80,7 @@ Resources:
           - subnet-06f002cc77ccc4805
           - subnet-0fb99247dca3eb20f
       Layers:
-        - 'arn:aws:lambda:ap-northeast-2:884587563648:layer:stack-node-common:14'
+        - 'arn:aws:lambda:ap-northeast-2:884587563648:layer:stack-node-common:15'
       RuntimeManagementConfig:
         UpdateRuntimeOn: Auto
   setEc2InstancesStatus:
@@ -103,7 +103,7 @@ Resources:
           - subnet-06f002cc77ccc4805
           - subnet-0fb99247dca3eb20f
       Layers:
-        - 'arn:aws:lambda:ap-northeast-2:884587563648:layer:stack-node-common:14'
+        - 'arn:aws:lambda:ap-northeast-2:884587563648:layer:stack-node-common:15'
       RuntimeManagementConfig:
         UpdateRuntimeOn: Auto
   getEc2InstancesDataFromRedis:
@@ -126,6 +126,6 @@ Resources:
           - subnet-06f002cc77ccc4805
           - subnet-0fb99247dca3eb20f
       Layers:
-        - 'arn:aws:lambda:ap-northeast-2:884587563648:layer:stack-node-common:14'
+        - 'arn:aws:lambda:ap-northeast-2:884587563648:layer:stack-node-common:15'
       RuntimeManagementConfig:
         UpdateRuntimeOn: Auto

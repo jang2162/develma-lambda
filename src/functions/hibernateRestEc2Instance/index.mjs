@@ -31,20 +31,15 @@ export const handler = async () => {
             ...item,
             ...instanceDescribeData[idx],
         }))
-
-    try {
-        const result = await Promise.all(instanceData.map(data => runHibernateRestEc2Instance(data)));
-        const redisHSetArr = result.map(item => item.redisHSet).filter(item => item);
-        await invokeLambda(lambdaClient, {
-            functionName: await ENV('LAMBDA_SET_EC2_INSTANCES_STATUS'),
-            payload: {
-                redisHost, redisPort, redisHSetArr
-            }
-        });
-        return result.map(item => item.result);
-    } finally {
-        redisClient.disconnect()
-    }
+    const result = await Promise.all(instanceData.map(data => runHibernateRestEc2Instance(data)));
+    const redisHSetArr = result.map(item => item.redisHSet).filter(item => item);
+    await invokeLambda(lambdaClient, {
+        functionName: await ENV('LAMBDA_SET_EC2_INSTANCES_STATUS'),
+        payload: {
+            redisHost, redisPort, redisHSetArr
+        }
+    });
+    return result.map(item => item.result);
 };
 
 
