@@ -1,0 +1,131 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Resources:
+  hibernateRestEc2Instance:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index.handler
+      Runtime: nodejs18.x
+      CodeUri: ./src/functions/hibernateRestEc2Instance
+      Description: ''
+      MemorySize: 256
+      Timeout: 10
+      Role: >-
+        arn:aws:iam::884587563648:role/role-develma-lambda-hibernateRestEc2Instance
+      Environment:
+        Variables:
+          ENV_FILE_S3_BUCKET: >-
+            develma-lambda
+          ENV_FILE_S3_PATH: >-
+            env/hibernateRestEc2Instance.json
+      Layers:
+        - 'arn:aws:lambda:ap-northeast-2:884587563648:layer:stack-node-common:14'
+      RuntimeManagementConfig:
+        UpdateRuntimeOn: Auto
+  chkEc2CondiMinecraftServerIdle:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index.handler
+      Runtime: nodejs18.x
+      CodeUri: ./src/functions/chkEc2CondiMinecraftServerIdle
+      Description: ''
+      MemorySize: 256
+      Timeout: 10
+      Role: >-
+        arn:aws:iam::884587563648:role/role-develma-lambda-chkEc2CondiMinecraftServerIdle
+      Layers:
+        - 'arn:aws:lambda:ap-northeast-2:884587563648:layer:stack-node-common:14'
+      RuntimeManagementConfig:
+        UpdateRuntimeOn: Auto
+  chkEc2CondiOpenVpnAccessServerIdle:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index.handler
+      Runtime: nodejs18.x
+      CodeUri: ./src/functions/chkEc2CondiOpenVpnAccessServerIdle
+      Description: ''
+      MemorySize: 256
+      Timeout: 10
+      Role: >-
+        arn:aws:iam::884587563648:role/role-develma-lambda-chkEc2CondiOpenVpnAccessServerIdle
+      VpcConfig:
+        SecurityGroupIds:
+          - sg-0a6d8baf06be8867c
+        SubnetIds:
+          - subnet-05688874212d0abbd
+          - subnet-08264014f9b279118
+          - subnet-06f002cc77ccc4805
+          - subnet-0fb99247dca3eb20f
+      Layers:
+        - 'arn:aws:lambda:ap-northeast-2:884587563648:layer:stack-node-common:14'
+      RuntimeManagementConfig:
+        UpdateRuntimeOn: Auto
+  chkEc2CondiSshDirLastModDate:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index.handler
+      Runtime: nodejs18.x
+      CodeUri: ./src/functions/chkEc2CondiSshDirLastModDate
+      Description: ''
+      MemorySize: 256
+      Timeout: 10
+      Role: >-
+        arn:aws:iam::884587563648:role/role-develma-lambda-chkEc2CondiSshDirLastModDate
+      VpcConfig:
+        SecurityGroupIds:
+          - sg-0a6d8baf06be8867c
+        SubnetIds:
+          - subnet-05688874212d0abbd
+          - subnet-08264014f9b279118
+          - subnet-06f002cc77ccc4805
+          - subnet-0fb99247dca3eb20f
+      Layers:
+        - 'arn:aws:lambda:ap-northeast-2:884587563648:layer:stack-node-common:14'
+      RuntimeManagementConfig:
+        UpdateRuntimeOn: Auto
+  setEc2InstancesStatus:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index.handler
+      Runtime: nodejs18.x
+      CodeUri: ./src/functions/setEc2InstancesStatus
+      Description: ''
+      MemorySize: 256
+      Timeout: 10
+      Role: >-
+        arn:aws:iam::884587563648:role/role-develma-lambda-setEc2InstancesStatus
+      VpcConfig:
+        SecurityGroupIds:
+          - sg-0a6d8baf06be8867c
+        SubnetIds:
+          - subnet-05688874212d0abbd
+          - subnet-08264014f9b279118
+          - subnet-06f002cc77ccc4805
+          - subnet-0fb99247dca3eb20f
+      Layers:
+        - 'arn:aws:lambda:ap-northeast-2:884587563648:layer:stack-node-common:14'
+      RuntimeManagementConfig:
+        UpdateRuntimeOn: Auto
+  getEc2InstancesDataFromRedis:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index.handler
+      Runtime: nodejs18.x
+      CodeUri: ./src/functions/getEc2InstancesDataFromRedis
+      Description: ''
+      MemorySize: 256
+      Timeout: 10
+      Role: >-
+        arn:aws:iam::884587563648:role/role-develma-lambda-getEc2InstancesDataFromRedis
+      VpcConfig:
+        SecurityGroupIds:
+          - sg-0a6d8baf06be8867c
+        SubnetIds:
+          - subnet-05688874212d0abbd
+          - subnet-08264014f9b279118
+          - subnet-06f002cc77ccc4805
+          - subnet-0fb99247dca3eb20f
+      Layers:
+        - 'arn:aws:lambda:ap-northeast-2:884587563648:layer:stack-node-common:14'
+      RuntimeManagementConfig:
+        UpdateRuntimeOn: Auto

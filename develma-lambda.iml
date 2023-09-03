@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/.aws-sam" />
+      <excludeFolder url="file://$MODULE_DIR$/.aws-sam" />
+    </content>
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+  <component name="syncSettings">
+    <option name="samConfigs">
+      <map>
+        <entry key="functions\template.yaml">
+          <value>
+            <SyncSamConfig>
+              <option name="bucketName" value="develma-lambda" />
+              <option name="enabledCapabilities">
+                <list>
+                  <option value="NAMED_IAM" />
+                  <option value="AUTO_EXPAND" />
+                </list>
+              </option>
+              <option name="stackName" value="develma-lambda" />
+            </SyncSamConfig>
+          </value>
+        </entry>
+        <entry key="hibernateRestEc2Instance\template.yaml">
+          <value>
+            <SyncSamConfig>
+              <option name="bucketName" value="deploy-lamda" />
+              <option name="enabledCapabilities">
+                <list>
+                  <option value="NAMED_IAM" />
+                  <option value="AUTO_EXPAND" />
+                </list>
+              </option>
+              <option name="stackName" value="deployLamda" />
+            </SyncSamConfig>
+          </value>
+        </entry>
+        <entry key="template.yaml">
+          <value>
+            <SyncSamConfig>
+              <option name="bucketName" value="develma-lambda" />
+              <option name="enabledCapabilities">
+                <list>
+                  <option value="NAMED_IAM" />
+                  <option value="AUTO_EXPAND" />
+                </list>
+              </option>
+              <option name="stackName" value="develma-lambda" />
+              <option name="tags">
+                <map />
+              </option>
+              <option name="tempParameterOverrides">
+                <map />
+              </option>
+            </SyncSamConfig>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</module>

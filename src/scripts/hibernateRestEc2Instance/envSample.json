@@ -1,0 +1,5 @@
+{
+  "REDIS_HOST":  "",
+  "REDIS_PORT": "",
+  "HIBERNATE_KEY": ""
+}
